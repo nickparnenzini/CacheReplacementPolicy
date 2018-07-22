@@ -3,7 +3,6 @@
 
 TEST(LFUCacheTest, testEvicts) {
     ICache *lfu_cache = new LFUCache(2);
-
     lfu_cache->put(1,1);
     lfu_cache->put(2,2);
     ASSERT_EQ(1, lfu_cache->get(1));
@@ -21,10 +20,10 @@ TEST(LFUCacheTest, testEvicts) {
 }
 
 TEST(LFUCacheTest, TestVoidLFU) {
-	ICache *lfu_cache = new LFUCache(0);
-	lfu_cache->put(1,1);
-	ASSERT_EQ(-1, lfu_cache->get(1));
-	delete lfu_cache;
+    ICache *lfu_cache = new LFUCache(0);
+    lfu_cache->put(1,1);
+    ASSERT_EQ(-1, lfu_cache->get(1));
+    delete lfu_cache;
 }
 
 int main(int argc, char **argv) {
