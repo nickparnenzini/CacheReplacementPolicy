@@ -10,9 +10,9 @@ public:
     {
     }
 
-    int get(int key);
+    int get(int key) override;
 
-    void put(int key, int value);
+    void put(int key, int value) override;
     
 private:
     std::multimap<int, std::pair<int,int>> frequency_storage;  // key: frequency; value: pair of (key,value)
